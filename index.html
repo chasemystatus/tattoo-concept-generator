@@ -15,6 +15,7 @@
   <body>
     <header>
       <img
+        class="hero-img"
         src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/094/original/.jpg?1767528523"
         alt=""
       />
@@ -28,9 +29,12 @@
 
     <main>
       <form id="tattoo-form">
-        <label for="tattoo-idea">Describe your tattoo idea</label>
+        <label class="form-label" for="tattoo-idea"
+          >Describe your tattoo idea</label
+        >
 
         <textarea
+          class="form-control"
           id="tattoo-idea"
           placeholder="e.g. blackwork moth with moon phases, fine-line roses and dagger, ornamental collarbone piece..."
           rows="4"
@@ -39,9 +43,11 @@
           autocomplete="off"
         ></textarea>
 
-        <label for="placement">Placement (optional)</label>
+        <label class="form-label" class="form-label" for="placement"
+          >Placement (optional)</label
+        >
 
-        <select id="placement">
+        <select class="form-control" id="placement">
           <option value="">Select placement</option>
           <option value="collarbone">Collarbone</option>
           <option value="neck">Neck</option>
@@ -57,7 +63,7 @@
           Generate concept
         </button>
       </form>
-      <section id="tattoo-concept" aria-live="polite">
+      <section class="tattoo-concept" id="tattoo-concept" aria-live="polite">
         Tattoo concept will appear here
       </section>
     </main>

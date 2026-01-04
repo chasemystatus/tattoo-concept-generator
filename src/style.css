@@ -1,1 +1,129 @@
+body {
+  background-color: #fafafa;
+  font-family: Inter, sans-serif;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  margin: 0 auto;
+}
+
+.hero-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 24px auto 24px;
+  padding: 20px;
+  opacity: 0.9;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.5;
+}
+
+p {
+  max-width: 760px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 23px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background: #f3f3f5;
+  border-radius: 8px;
+  font: inherit;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  font: inherit;
+  background-color: #7d7d85;
+  color: #fcfcfc;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease-in-out, box-shadow 120ms ease-in-out,
+    filter 120ms ease-in-out;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  filter: brightness(1.03);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+  filter: brightness(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+  filter: none;
+  transform: none;
+}
+
+.form_control:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.tattoo-concept {
+  line-height: 1.5;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #4c4c4e;
+}
