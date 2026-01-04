@@ -3,31 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <link rel="stylesheet" href="src/style.css" />
     <title>AI Tattoo Concept Generator</title>
   </head>
   <body>
     <header>
       <img
-        src="https://media.istockphoto.com/id/514735764/photo/tattoo-artist-working.jpg?s=612x612&w=0&k=20&c=qCq1qQWK53940ICpQWIPKXUVyAAA9IDjoNh6AknKUeU="
-        alt="Tattoo gun black and white"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/094/original/.jpg?1767528523"
+        alt=""
       />
       <h1>Tattoo Concept Generator</h1>
 
-      <h2>
+      <p>
         Describe your idea and get a personalized tattoo concept to discuss with
         your artist
-      </h2>
+      </p>
     </header>
 
     <main>
-      <form>
+      <form id="tattoo-form">
         <label for="tattoo-idea">Describe your tattoo idea</label>
 
         <textarea
           id="tattoo-idea"
           placeholder="e.g. blackwork moth with moon phases, fine-line roses and dagger, ornamental collarbone piece..."
           rows="4"
+          autofocus
+          required
+          autocomplete="off"
         ></textarea>
 
         <label for="placement">Placement (optional)</label>
@@ -44,10 +50,13 @@
           <option value="calf">Calf</option>
         </select>
 
-        <button id="generate-button" type="submit" disabled>
+        <button id="generate-btn" type="submit" disabled>
           Generate concept
         </button>
       </form>
+      <section id="tattoo-concept" aria-live="polite">
+        Tattoo concept will appear here
+      </section>
     </main>
 
     <footer>
