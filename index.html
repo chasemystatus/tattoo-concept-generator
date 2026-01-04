@@ -4,19 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Tattoo Concept Generator</title>
+    <title>AI Tattoo Concept Generator</title>
   </head>
   <body>
-    <main>
+    <header>
+      <img
+        src="https://media.istockphoto.com/id/514735764/photo/tattoo-artist-working.jpg?s=612x612&w=0&k=20&c=qCq1qQWK53940ICpQWIPKXUVyAAA9IDjoNh6AknKUeU="
+        alt="Tattoo gun black and white"
+      />
       <h1>Tattoo Concept Generator</h1>
 
       <h2>
         Describe your idea and get a personalized tattoo concept to discuss with
         your artist
       </h2>
+    </header>
 
+    <main>
       <form>
         <label for="tattoo-idea">Describe your tattoo idea</label>
+
+        <textarea
+          id="tattoo-idea"
+          placeholder="e.g. blackwork moth with moon phases, fine-line roses and dagger, ornamental collarbone piece..."
+          rows="4"
+        ></textarea>
+
+        <label for="placement">Placement (optional)</label>
+
+        <select id="placement">
+          <option value="">Select placement</option>
+          <option value="collarbone">Collarbone</option>
+          <option value="neck">Neck</option>
+          <option value="forearm">Forearm</option>
+          <option value="upper-arm">Upper arm</option>
+          <option value="back">Back</option>
+          <option value="ribcage">Ribcage</option>
+          <option value="thigh">Thigh</option>
+          <option value="calf">Calf</option>
+        </select>
+
+        <button id="generate-button" type="submit" disabled>
+          Generate concept
+        </button>
       </form>
     </main>
 
