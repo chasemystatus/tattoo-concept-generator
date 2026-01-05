@@ -1,13 +1,20 @@
+let typedInstance;
+
 function displayConcept(response) {
-  let output = document.querySelector("#tattoo-concept");
+  const output = document.querySelector("#tattoo-concept");
   output.innerHTML = "";
 
   console.log("Concept generated.");
-  new Typewriter("#tattoo-concept", {
+
+  if (typedInstance) {
+    typedInstance.destroy();
+    typedInstance = null;
+  }
+
+  typedInstance = new Typed("#tattoo-concept", {
     strings: [response.data.answer],
-    delay: 5,
-    autoStart: true,
-    cursor: "",
+    typeSpeed: 15,
+    showCursor: false,
     loop: false,
   });
 }
