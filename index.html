@@ -9,8 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script
+      src="https://unpkg.com/typewriter-effect@latest/dist/core.js"
+      defer
+    ></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="src/index.js" defer></script>
     <title>AI Tattoo Concept Generator</title>
   </head>
   <body>
@@ -44,9 +52,7 @@
           autocomplete="off"
         ></textarea>
 
-        <label class="form-label" class="form-label" for="placement"
-          >Placement (optional)</label
-        >
+        <label class="form-label" for="placement">Placement (optional)</label>
 
         <select class="form-control" id="placement">
           <option value="">Select placement</option>
@@ -91,6 +97,5 @@
         >Netlify</a
       >.
     </footer>
-    <script src="src/index.js"></script>
   </body>
 </html>

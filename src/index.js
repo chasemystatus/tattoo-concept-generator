@@ -1,18 +1,27 @@
-function generateTattooConcept(event) {
-  event.preventDefault();
-
+function displayConcept(response) {
   let output = document.querySelector("#tattoo-concept");
   output.innerHTML = "";
 
   new Typewriter("#tattoo-concept", {
-    strings: ["Your concept will appear here. Please wait..."],
+    strings: response.data.answer,
     delay: 5,
     autoStart: true,
     cursor: "",
   });
 }
 
-let tattooForm = document.querySelector("#tattoo-form");
-if (tattooForm) {
-  tattooForm.addEventListener("submit", generateTattooConcept);
+function generateTattooConcept(event) {
+  event.preventDefault();
+
+  let apiKey = "f8ac3ab5b2f666adta3f1e4o43e6107c";
+  let prompt = "";
+  let context = "";
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(displayConcept);
+
+  let tattooForm = document.querySelector("#tattoo-form");
+  if (tattooForm) {
+    tattooForm.addEventListener("submit", generateTattooConcept);
+  }
 }
