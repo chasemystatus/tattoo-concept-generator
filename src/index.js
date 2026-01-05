@@ -1,13 +1,18 @@
 function generateTattooConcept(event) {
   event.preventDefault();
 
+  let output = document.querySelector("#tattoo-concept");
+  output.innerHTML = "";
+
   new Typewriter("#tattoo-concept", {
     strings: ["Your concept will appear here. Please wait..."],
-    delay: 40,
+    delay: 5,
     autoStart: true,
     cursor: "",
   });
 }
 
 let tattooForm = document.querySelector("#tattoo-form");
-tattooForm.addEventListener("submit", generateTattooConcept);
+if (tattooForm) {
+  tattooForm.addEventListener("submit", generateTattooConcept);
+}
