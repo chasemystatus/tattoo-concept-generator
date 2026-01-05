@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>AI Tattoo Concept Generator</title>
   </head>
@@ -59,13 +60,13 @@
           <option value="calf">Calf</option>
         </select>
 
-        <button id="generate-btn" type="submit" disabled>
-          Generate concept
-        </button>
+        <button id="generate-btn" type="submit">Generate concept</button>
       </form>
-      <section class="tattoo-concept" id="tattoo-concept" aria-live="polite">
-        Tattoo concept will appear here
-      </section>
+      <section
+        class="tattoo-concept"
+        id="tattoo-concept"
+        aria-live="polite"
+      ></section>
     </main>
 
     <footer>
