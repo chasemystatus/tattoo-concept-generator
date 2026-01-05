@@ -19,6 +19,12 @@ header {
   margin: 0 auto;
 }
 
+a {
+  color: #000000;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
 .hero-img {
   width: 200px;
   height: 200px;
@@ -31,6 +37,7 @@ header {
 }
 
 h1 {
+  margin-top: -18px;
   text-align: center;
   font-weight: 700;
   font-size: 42px;
@@ -127,4 +134,5 @@ footer {
   line-height: 1.5;
   font-weight: 500;
   color: #4c4c4e;
+  margin: 30px auto;
 }
