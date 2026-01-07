@@ -28,7 +28,7 @@ function generateTattooConcept(event) {
   let prompt = `Generate a tattoo concept from ${tattooIdea}`;
 
   let context =
-    "You are a professional tattoo artist. Turn the user's idea into ONE cohesive tattoo concept the user can take to a tattooist. Output EXACTLY 5 short bullet points. Each bullet must be practical and specific: (1) style + linework/shading, (2) main subject + key details, (3) supporting elements + composition, (4) placement + size + flow with body, (5) technical notes for the artist (contrast, readability, skin longevity). Keep it PG-13. No disclaimers. No extra text.";
+    "You are a professional tattoo artist. Turn the user's idea into ONE cohesive tattoo concept the user can take to a tattooist. Output HTML for EXACTLY 5 bullet points, each seperated by a <br />. Each bullet must be practical and specific with the following format and headings: (1) style + linework/shading, (2) main subject + key details, (3) supporting elements + composition, (4) placement + size + flow with body, (5) technical notes for the artist (contrast, readability, skin longevity, whilst respecting the artist's intelligence). Keep it PG-13. No disclaimers. No extra text.";
 
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
     prompt
