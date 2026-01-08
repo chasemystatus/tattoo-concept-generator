@@ -1,7 +1,10 @@
 let typedInstance;
 
+let output = document.querySelector("#tattoo-concept");
+let ideaInput = document.querySelector("#tattoo-idea");
+let placementInput = document.querySelector("#placement");
+
 function displayConcept(response) {
-  const output = document.querySelector("#tattoo-concept");
   output.innerHTML = "";
 
   console.log("Concept generated.");
@@ -22,8 +25,8 @@ function generateTattooConcept(event) {
     typedInstance = null;
   }
 
-  let tattooIdea = document.querySelector("#tattoo-idea").value;
-  let placement = document.querySelector("#placement").value;
+  let tattooIdea = ideaInput.value;
+  let placement = placementInput.value;
 
   let prompt = `Generate a tattoo concept based on this idea: "${tattooIdea}"`;
 
@@ -52,10 +55,7 @@ function generateTattooConcept(event) {
 
   console.log("Generating concept...");
   console.log(`Prompt: ${prompt}`);
-  console.log("Placement:", placement);
-  console.log(`Context: ${context}`);
 
-  let output = document.querySelector("#tattoo-concept");
   output.textContent = "Generating concept...";
 
   axios
