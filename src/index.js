@@ -20,8 +20,6 @@ function displayConcept(response) {
   output.classList.remove("is-loading");
   output.innerHTML = "";
 
-  console.log("Concept generated.");
-
   typedInstance = new Typed("#tattoo-concept", {
     strings: [response.data.answer],
     typeSpeed: 15,
@@ -41,6 +39,10 @@ function displayConcept(response) {
 function generateTattooConcept(event) {
   event.preventDefault();
 
+  if (ideaInput.value.trim() === "") {
+    return;
+  }
+
   button.setAttribute("disabled", "disabled");
   button.textContent = "Generating…";
 
@@ -49,12 +51,12 @@ function generateTattooConcept(event) {
     typedInstance = null;
   }
 
-  let tattooIdea = ideaInput.value;
-  let placement = placementInput.value;
+  let tattooIdea = ideaInput.value.trim();
+  let placement = placementInput.value.trim();
 
   let prompt = `Generate a tattoo concept based on this idea: "${tattooIdea}"`;
 
-  if (placement.trim() !== "") {
+  if (placement.trim !== "") {
     prompt = `${prompt}. Placement: ${placement}.`;
   } else {
     prompt = `${prompt}.`;
@@ -77,17 +79,13 @@ function generateTattooConcept(event) {
     prompt
   )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
-  console.log("Generating concept...");
-  console.log(`Prompt: ${prompt}`);
-
   output.classList.add("is-loading");
   output.textContent = "Generating concept…";
 
   axios
     .get(apiUrl)
     .then(displayConcept)
-    .catch(function (error) {
-      console.log("error message:", error.message);
+    .catch(function () {
       output.classList.remove("is-loading");
       output.textContent = "Something went wrong. Please try again.";
       button.textContent = "Generate concept";
