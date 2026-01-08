@@ -5,6 +5,7 @@ let ideaInput = document.querySelector("#tattoo-idea");
 let placementInput = document.querySelector("#placement");
 
 function displayConcept(response) {
+  output.classList.remove("is-loading");
   output.innerHTML = "";
 
   console.log("Concept generated.");
@@ -56,6 +57,7 @@ function generateTattooConcept(event) {
   console.log("Generating concept...");
   console.log(`Prompt: ${prompt}`);
 
+  output.classList.add("is-loading");
   output.textContent = "Generating concept...";
 
   axios
@@ -63,6 +65,7 @@ function generateTattooConcept(event) {
     .then(displayConcept)
     .catch(function (error) {
       console.log("error message:", error.message);
+      output.classList.remove("is-loading");
       output.textContent = "Something went wrong. Please try again.";
     });
 }
