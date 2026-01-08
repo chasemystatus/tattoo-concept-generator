@@ -128,6 +128,40 @@ button:focus-visible {
   padding: 20px;
 }
 
+#tattoo-concept ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#tattoo-concept li {
+  margin-bottom: 12px;
+}
+
+#tattoo-concept li:last-child {
+  margin-bottom: 0;
+}
+
+#tattoo-concept.is-loading {
+  display: inline-block;
+  font-weight: 600;
+  animation: conceptPulse 1s ease-in-out infinite;
+}
+
+@keyframes conceptPulse {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.995);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(0.995);
+  }
+}
+
 footer {
   text-align: center;
   font-size: 14px;
