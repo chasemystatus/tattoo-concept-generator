@@ -142,9 +142,9 @@ button:focus-visible {
 }
 
 #tattoo-concept.is-loading {
-display: inline-block;
-font-weight: 600;
-animation: conceptPulse 1s ease-in-out infinite;
+  display: inline-block;
+  font-weight: 600;
+  animation: conceptPulse 1s ease-in-out infinite;
 }
 
 @keyframes conceptPulse {
@@ -154,7 +154,7 @@ animation: conceptPulse 1s ease-in-out infinite;
   }
   50% {
     opacity: 1;
-  transform: scale(1);
+    transform: scale(1);
   }
   100% {
     opacity: 0.35;

@@ -3,6 +3,18 @@ let typedInstance;
 let output = document.querySelector("#tattoo-concept");
 let ideaInput = document.querySelector("#tattoo-idea");
 let placementInput = document.querySelector("#placement");
+let button = document.querySelector("#generate-btn");
+
+button.setAttribute("disabled", "disabled");
+button.textContent = "Generate concept";
+
+ideaInput.addEventListener("input", function () {
+  if (ideaInput.value.trim() === "") {
+    button.setAttribute("disabled", "disabled");
+  } else {
+    button.removeAttribute("disabled");
+  }
+});
 
 function displayConcept(response) {
   output.classList.remove("is-loading");
@@ -16,10 +28,21 @@ function displayConcept(response) {
     showCursor: false,
     loop: false,
   });
+
+  button.textContent = "Generate concept";
+
+  if (ideaInput.value.trim() === "") {
+    button.setAttribute("disabled", "disabled");
+  } else {
+    button.removeAttribute("disabled");
+  }
 }
 
 function generateTattooConcept(event) {
   event.preventDefault();
+
+  button.setAttribute("disabled", "disabled");
+  button.textContent = "Generating…";
 
   if (typedInstance) {
     typedInstance.destroy();
@@ -58,7 +81,7 @@ function generateTattooConcept(event) {
   console.log(`Prompt: ${prompt}`);
 
   output.classList.add("is-loading");
-  output.textContent = "Generating concept...";
+  output.textContent = "Generating concept…";
 
   axios
     .get(apiUrl)
@@ -67,6 +90,13 @@ function generateTattooConcept(event) {
       console.log("error message:", error.message);
       output.classList.remove("is-loading");
       output.textContent = "Something went wrong. Please try again.";
+      button.textContent = "Generate concept";
+
+      if (ideaInput.value.trim() === "") {
+        button.setAttribute("disabled", "disabled");
+      } else {
+        button.removeAttribute("disabled");
+      }
     });
 }
 
