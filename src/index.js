@@ -2,7 +2,7 @@ let typedInstance;
 
 function displayConcept(response) {
   const output = document.querySelector("#tattoo-concept");
-  output.textContent = "";
+  output.innerHTML = "";
 
   console.log("Concept generated.");
 
@@ -23,9 +23,15 @@ function generateTattooConcept(event) {
   }
 
   let tattooIdea = document.querySelector("#tattoo-idea").value;
+  let placement = document.querySelector("#placement").value;
 
-  let apiKey = "f8ac3ab5b2f666adta3f1e4o43e6107c";
-  let prompt = `Generate a tattoo concept based on this idea: "${tattooIdea}".`;
+  let prompt = `Generate a tattoo concept based on this idea: "${tattooIdea}"`;
+
+  if (placement.trim() !== "") {
+    prompt = `${prompt}. Placement: ${placement}.`;
+  } else {
+    prompt = `${prompt}.`;
+  }
 
   let context =
     "You are a professional tattoo artist. Create ONE cohesive tattoo concept the user can take to a tattooist. " +
@@ -39,12 +45,14 @@ function generateTattooConcept(event) {
     "<strong>Technical notes for the artist</strong>. " +
     "Keep it PG-13. No disclaimers. No extra text.";
 
+  let apiKey = "f8ac3ab5b2f666adta3f1e4o43e6107c";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
     prompt
   )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
   console.log("Generating concept...");
   console.log(`Prompt: ${prompt}`);
+  console.log("Placement:", placement);
   console.log(`Context: ${context}`);
 
   let output = document.querySelector("#tattoo-concept");
