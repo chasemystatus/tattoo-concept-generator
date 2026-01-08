@@ -17,8 +17,8 @@ ideaInput.addEventListener("input", function () {
 });
 
 function displayConcept(response) {
+  output.textContent = " ";
   output.classList.remove("is-loading");
-  output.innerHTML = "";
 
   typedInstance = new Typed("#tattoo-concept", {
     strings: [response.data.answer],
